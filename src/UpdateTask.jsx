@@ -28,7 +28,7 @@ const UpdateTask = () => {
 
   return (
     <div className="d-flex justify-content-start align-items-start">
-      <div className="bg-white rounded p-3">
+      <div className="w-100 bg-white rounded p-3">
         <form onSubmit={handleSubmit}>
           <h2>Update TaskList</h2>
           <div className="mb-2">
