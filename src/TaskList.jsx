@@ -65,13 +65,21 @@ const Users = () => {
               </th>
 
               <th
-                style={{ textAlign: "center", alignContent: "center" }}
+                style={{
+                  textAlign: "center",
+                  alignContent: "center",
+                  textWrap: "nowrap",
+                }}
                 className="pe-2 ps-2"
               >
                 Task Name
               </th>
               <th
-                style={{ textAlign: "center", alignContent: "center" }}
+                style={{
+                  textAlign: "center",
+                  alignContent: "center",
+                  textWrap: "nowrap",
+                }}
                 className="pe-2 ps-2"
               >
                 Status
@@ -89,8 +97,8 @@ const Users = () => {
               return (
                 <tr key={index}>
                   <td className="text-center">{index + 1}</td>
-                  <td>{task.taskName}</td>
-                  <td>{task.status}</td>
+                  <td style={{ textWrap: "nowrap" }}>{task.taskName}</td>
+                  <td style={{ textWrap: "nowrap" }}>{task.status}</td>
                   <td>
                     <Link
                       to={`/update/${task._id}`}
