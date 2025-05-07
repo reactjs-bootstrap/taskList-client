@@ -41,7 +41,7 @@ const Users = () => {
   }, []);
 
   return (
-    <div className="d-flex justify-content-center align-items-start">
+    <div className="d-flex justify-content-start align-items-start">
       <div className="bg-white rounded p-3">
         <Link to="/create" className="btn btn-success btn-sm">
           Add Task +
