@@ -13,6 +13,7 @@ const UpdateTask = () => {
     axios
       .put("https://tasklist-huyu.onrender.com/" + id, { taskName, status })
       .then(() => navigate("/"));
+    console.log(taskName, status);
   };
 
   const handleReset = () => {
@@ -35,8 +36,8 @@ const UpdateTask = () => {
             <label htmlFor="">Task</label>
             <input
               type="text"
-              placeholder="Enter Task Detail"
-              className="form-control"
+              placeholder="Enter Task Details"
+              className="form-control shadow-none"
               value={taskName
                 .toLowerCase()
                 .split(" ")
@@ -45,19 +46,18 @@ const UpdateTask = () => {
               onChange={(e) => setTaskName(e.target.value)}
             />
           </div>
-          <div className="mb-2">
-            <label htmlFor="">Status</label>
-            <input
-              type="text"
-              placeholder="Enter Status of Task"
-              className="form-control"
-              value={status
-                .toLowerCase()
-                .split(" ")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
+          <div className="mb-2  ">
+            <label>Status</label>
+            <select
+              className="form-select shadow-none"
+              value={status}
               onChange={(e) => setStatus(e.target.value)}
-            />
+            >
+              {/* <option value="">Select Status</option> */}
+              <option value="Pending">Pending</option>
+              <option value="Started">Started</option>
+              <option value="Completed">Completed</option>
+            </select>
           </div>
 
           <button className="btn btn-success">Update</button>
